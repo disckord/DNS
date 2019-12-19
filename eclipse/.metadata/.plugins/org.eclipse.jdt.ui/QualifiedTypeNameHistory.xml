@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.iclojure.jline.WindowsTerminal"/>
+<fullyQualifiedTypeName name="com.iclojure.jline.internal.Configuration"/>
+<fullyQualifiedTypeName name="com.iclojure.jline.internal.Log"/>
+<fullyQualifiedTypeName name="com.iclojure.jline.console.ConsoleReader"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.libs.com.google.gson.GsonBuilder"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.entity.CraftPlayer"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_5_R3.entity.CraftPlayer"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_5_R3.Item"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_5_R3.Block"/>
+<fullyQualifiedTypeName name="javax.swing.Icon"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.libs.com.google.gson.Gson"/>
+</qualifiedTypeNameHistroy>

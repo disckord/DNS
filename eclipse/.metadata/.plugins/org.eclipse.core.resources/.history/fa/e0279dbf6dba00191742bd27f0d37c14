@@ -1,0 +1,129 @@
+package net.minecraft.server.v1_5_R3;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+
+public class Packet63WorldParticles extends Packet {
+
+    private String a;
+    private float b;
+    private float c;
+    private float d;
+    private float e;
+    private float f;
+    private float g;
+    private float h;
+    private int i;
+
+    public Packet63WorldParticles(String type, double x, double y, double z, double vx, double vy, double vz) 
+    {
+    	this.a = type;
+    	this.b = (float) x;
+    	this.c = (float) y;
+    	this.d = (float) z;
+    	this.e = (float) vx;
+    	this.f = (float) vy;
+    	this.g = (float) vz;
+    }
+
+    public void a(DataInputStream datainputstream) throws IOException {
+        this.a = a(datainputstream, 64);
+        this.b = datainputstream.readFloat();
+        this.c = datainputstream.readFloat();
+        this.d = datainputstream.readFloat();
+        this.e = datainputstream.readFloat();
+        this.f = datainputstream.readFloat();
+        this.g = datainputstream.readFloat();
+        this.h = datainputstream.readFloat();
+        this.i = datainputstream.readInt();
+    }
+
+    public void a(DataOutputStream dataoutputstream) throws IOException {
+        a(this.a, dataoutputstream);
+        dataoutputstream.writeFloat(this.b);
+        dataoutputstream.writeFloat(this.c);
+        dataoutputstream.writeFloat(this.d);
+        dataoutputstream.writeFloat(this.e);
+        dataoutputstream.writeFloat(this.f);
+        dataoutputstream.writeFloat(this.g);
+        dataoutputstream.writeFloat(this.h);
+        dataoutputstream.writeInt(this.i);
+    }
+    public String getParticleName()
+    {
+        return this.a;
+    }
+
+    /**
+     * Gets the X position of the particle.
+     */
+    public double getPositionX()
+    {
+        return (double)this.b;
+    }
+
+    /**
+     * Gets the Y position of the particle.
+     */
+    public double getPositionY()
+    {
+        return (double)this.c;
+    }
+
+    /**
+     * Gets the Z position of the particle.
+     */
+    public double getPositionZ()
+    {
+        return (double)this.d;
+    }
+
+    /**
+     * This is added to the X position after being multiplied by random.nextGaussian()
+     */
+    public float getOffsetX()
+    {
+        return this.e;
+    }
+
+    /**
+     * This is added to the Y position after being multiplied by random.nextGaussian()
+     */
+    public float getOffsetY()
+    {
+        return this.f;
+    }
+
+    /**
+     * This is added to the Z position after being multiplied by random.nextGaussian()
+     */
+    public float getOffsetZ()
+    {
+        return this.g;
+    }
+
+    /**
+     * Gets the speed of the particles.
+     */
+    public float getSpeed()
+    {
+        return this.h;
+    }
+
+    /**
+     * Gets the number of particles to create.
+     */
+    public int getQuantity()
+    {
+        return this.i;
+    }
+
+    public void handle(Connection connection) {
+        connection.a(this);
+    }
+
+    public int a() {
+        return 64;
+    }
+}
