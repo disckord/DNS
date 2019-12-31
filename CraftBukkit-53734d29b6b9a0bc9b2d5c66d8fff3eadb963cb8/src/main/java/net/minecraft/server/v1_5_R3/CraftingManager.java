@@ -34,6 +34,7 @@ public class CraftingManager {
         this.recipes.add(new RecipeMapExtend());
         this.recipes.add(new RecipeFireworks());
       //added recipes
+        this.registerShapedRecipe(new ItemStack(Item.QUARTZ, 4), new Object[] {"#", '#', Block.QUARTZ_BLOCK});
         this.registerShapedRecipe(new ItemStack(Block.coalBlock, 1), new Object[] {"###", "###", "###", '#', Item.COAL});
         this.registerShapedRecipe(new ItemStack(Block.coalBlock, 1), new Object[] {"###", "###", "###", '#', new ItemStack(Item.COAL, 1,1)});
       //  this.registerShapedRecipe(new ItemStack(Item.COAL, 9), new Object[] {"#", '#', Block.coalBlock});

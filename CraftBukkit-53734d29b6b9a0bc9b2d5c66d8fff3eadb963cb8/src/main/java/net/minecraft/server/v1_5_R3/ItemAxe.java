@@ -2,7 +2,7 @@ package net.minecraft.server.v1_5_R3;
 
 public class ItemAxe extends ItemTool {
 
-    private static Block[] c = new Block[] { Block.WOOD, Block.BOOKSHELF, Block.LOG, Block.CHEST, Block.DOUBLE_STEP, Block.STEP, Block.PUMPKIN, Block.JACK_O_LANTERN, Block.LEAVES};
+    private static Block[] c = new Block[] { Block.WOOD, Block.BOOKSHELF, Block.LOG, Block.CHEST, Block.DOUBLE_STEP, Block.STEP, Block.PUMPKIN, Block.JACK_O_LANTERN};
 
     protected ItemAxe(int i, EnumToolMaterial enumtoolmaterial) {
         super(i, 3, enumtoolmaterial, c);

@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="configuration" key="selection"/>
+		<item value="getBukkitEnt" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="configuration"/>
-			<item value="target"/>
-			<item value="drop"/>
-			<item value="getbuk"/>
-			<item value="capab"/>
-			<item value="static"/>
-			<item value="stat"/>
-			<item value="issta"/>
+			<item value="getbukkitent"/>
+			<item value="getbukkit"/>
+			<item value="addentity"/>
+			<item value="wart"/>
+			<item value="wrat"/>
+			<item value="stem"/>
+			<item value="16"/>
+			<item value="moty"/>
 		</list>
 		<list key="replacehistory">
 			<item value="id"/>

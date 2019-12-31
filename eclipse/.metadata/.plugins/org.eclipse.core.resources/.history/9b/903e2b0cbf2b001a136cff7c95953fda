@@ -1,0 +1,11 @@
+package net.minecraft.server.v1_5_R3;
+
+public class PathfinderGoalNetherCreeperSwell extends PathfinderGoal {
+
+	@Override
+	public boolean a() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -14,8 +14,8 @@ public class EntitySkeleton extends EntityMonster implements IRangedEntity {
         this.texture = "/mob/skeleton.png";
         this.bI = 0.25F;
         this.goalSelector.a(1, new PathfinderGoalFloat(this));
-        this.goalSelector.a(2, new PathfinderGoalRestrictSun(this));
-        this.goalSelector.a(3, new PathfinderGoalFleeSun(this, this.bI));
+       // this.goalSelector.a(2, new PathfinderGoalRestrictSun(this));
+        //this.goalSelector.a(3, new PathfinderGoalFleeSun(this, this.bI));
         this.goalSelector.a(5, new PathfinderGoalRandomStroll(this, this.bI));
         this.goalSelector.a(6, new PathfinderGoalLookAtPlayer(this, EntityHuman.class, 8.0F));
         this.goalSelector.a(6, new PathfinderGoalRandomLookaround(this));
@@ -251,7 +251,7 @@ public class EntitySkeleton extends EntityMonster implements IRangedEntity {
     }
 
     public int getSkeletonType() {
-        return this.datawatcher.getByte(13);
+        return 0;// this.datawatcher.getByte(13);
     }
 
     public void setSkeletonType(int i) {

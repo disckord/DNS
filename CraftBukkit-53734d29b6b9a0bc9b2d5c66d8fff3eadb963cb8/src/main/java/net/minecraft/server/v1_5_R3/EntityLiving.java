@@ -137,7 +137,40 @@ public abstract class EntityLiving extends Entity {
 
         this.Y = 0.5F;
     }
-
+   
+    public void rotateAttackRight()
+    {
+    	 if (this.getGoalTarget() != null && !this.dead)
+         {
+         	double d1 = this.getGoalTarget().locX - locX;
+             double d2 = this.getGoalTarget().locZ - locZ;
+             
+             float f2 = (float)((Math.atan2(d2, d1) * 180D) / 3.1415927410125732D) - 90F;
+             float f3 = f2 - yaw;
+            this.e(0F, 0.2f);
+             getControllerLook().a(this.getGoalTarget(), 30.0F, 30.0F);
+             for(; f3 < -180F; f3 += 360F) { }
+             for(; f3 >= 180F; f3 -= 360F) { }
+             if(f3 > 30F)
+             {
+                 f3 = 30F;
+             }
+             if(f3 < -30F)
+             {
+                 f3 = -30F;
+             }
+            // rotationYaw += f3;
+             
+         	 double d4 = this.getGoalTarget().locX - locX;
+             double d5 = this.getGoalTarget().locZ - locZ;
+             float f5 = yaw;
+             yaw = (float)((Math.atan2(d5, d4) * 180D) / 3.1415927410125732D) - 90F;
+             float f4 = (((f5 - yaw) + 90F) * 3.141593F) / 180F;
+             this.e(MathHelper.sin(f4) * 0.2F , 0);
+             
+         }
+    	
+    }
     protected int ay() {
         return 16;
     }
@@ -2144,4 +2177,5 @@ public abstract class EntityLiving extends Entity {
     public boolean bU() {
         return this.persistent;
     }
+	
 }

@@ -14,6 +14,7 @@ import java.util.concurrent.Callable;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.util.LongHashSet;
 import org.bukkit.craftbukkit.util.UnsafeList;
+import org.bukkit.craftbukkit.v1_5_R3.entity.CraftCreeper;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.CraftWorld;

@@ -9,7 +9,11 @@
 <fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
 <fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_5_R3.entity.CraftPlayer"/>
 <fullyQualifiedTypeName name="net.minecraft.server.v1_5_R3.Item"/>
-<fullyQualifiedTypeName name="net.minecraft.server.v1_5_R3.Block"/>
 <fullyQualifiedTypeName name="javax.swing.Icon"/>
 <fullyQualifiedTypeName name="org.bukkit.craftbukkit.libs.com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_5_R3.Block"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.entity.CraftCreeper"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_5_R3.entity.CraftCreeper"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_5_R3.EntityNetherCreeper"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_5_R3.EntityCreeper"/>
 </qualifiedTypeNameHistroy>
