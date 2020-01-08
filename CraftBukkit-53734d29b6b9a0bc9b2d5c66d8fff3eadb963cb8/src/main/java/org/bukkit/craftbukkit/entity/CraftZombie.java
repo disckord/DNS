@@ -39,6 +39,6 @@ public class CraftZombie extends CraftMonster implements Zombie {
     }
 
     public void setVillager(boolean flag) {
-        getHandle().setVillager(flag);
+        getHandle().setVillager(false);
     }
 }

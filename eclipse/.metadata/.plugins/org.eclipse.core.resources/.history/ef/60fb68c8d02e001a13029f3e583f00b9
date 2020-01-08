@@ -269,7 +269,7 @@ public class EntityZombie extends EntityMonster {
     public void bJ() {
         this.h(this.random.nextFloat() < au[this.world.difficulty]);
         if (this.world.random.nextFloat() < 0.05F) {
-        //    this.setVillager(true);
+            this.setVillager(true);
         }
 
         this.bH();

@@ -178,7 +178,7 @@ public class Item {
    public static Item CAKE = (new ItemReed(98, Block.CAKE_BLOCK)).d(1).b("cake").a(CreativeModeTab.h);
    public static Item BED = (new ItemBed(99)).d(1).b("bed");
    public static Item DIODE = (new ItemReed(100, Block.DIODE_OFF)).b("diode").a(CreativeModeTab.d);
-   public static Item COOKIE = (new ItemFood(101, 2, 0.1F, false)).b("cookie").d(8);
+   public static Item COOKIE = (new ItemFood(101, 2, 0.1F, false)).b("cookie");
    public static ItemWorldMap MAP = (ItemWorldMap)(new ItemWorldMap(102)).b("map");
    public static ItemShears SHEARS = (ItemShears)(new ItemShears(103)).b("shears");
    public static Item MELON = (new ItemFood(104, 2, 0.3F, false)).b("melon");

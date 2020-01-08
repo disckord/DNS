@@ -140,7 +140,7 @@ public class VillageSiege {
             try {
                 entityzombie = new EntityZombie(this.world);
                 entityzombie.bJ();
-                entityzombie.setVillager(false);
+              //  entityzombie.setVillager(false);
             } catch (Exception exception) {
                 exception.printStackTrace();
                 return false;
