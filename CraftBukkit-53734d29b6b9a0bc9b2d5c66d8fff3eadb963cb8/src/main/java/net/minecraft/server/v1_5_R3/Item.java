@@ -82,7 +82,7 @@ public class Item {
    public static Item IRON_AXE = (new ItemAxe(2, EnumToolMaterial.IRON)).b("hatchetIron");
    public static Item FLINT_AND_STEEL = (new ItemFlintAndSteel(3)).b("flintAndSteel");
    public static Item APPLE = (new ItemFood(4, 4, 0.3F, false)).b("apple");
-   public static ItemBow BOW = (ItemBow)(new ItemBow(5)).b("bow");
+   public static ItemBow BOW = (ItemBow)(new ItemBow(5, EnumBowType.DEFAULT)).b("bow");
    public static Item ARROW = (new Item(6)).b("arrow").a(CreativeModeTab.j);
    public static Item COAL = (new ItemCoal(7)).b("coal");
    public static Item DIAMOND = (new Item(8)).b("diamond").a(CreativeModeTab.l);
@@ -303,6 +303,12 @@ public class Item {
    public static Item swordQEHARDIRON = (new ItemSword(233,EnumToolMaterial.QEHARDIRON).b("swordQEHARDIRON"));
    public static Item swordQEHARDDIAMOND = (new ItemSword(234,EnumToolMaterial.QEHARDDIAMOND).b("swordQEHARDDIAMOND"));
    public static Item swordQEHARDGOLD = (new ItemSword(235,EnumToolMaterial.QEHARDGOLD).b("swordQEHARDGOLD"));
+   public static Item ironArrow = (new Item(236)).b("ironarrow").a(CreativeModeTab.j);
+   public static Item diamondArrow = (new Item(237)).b("diamondarrow").a(CreativeModeTab.j);
+   public static Item goldArrow = (new Item(238)).b("goldarrow").a(CreativeModeTab.j);
+   public static ItemBow ironBow = (ItemBow)(new ItemBow(239, EnumBowType.IRONBOW)).b("ironbow");
+   public static ItemBow diamondBow = (ItemBow)(new ItemBow(240, EnumBowType.DIAMONDBOW)).b("diamondbow");
+   public static ItemBow goldBow = (ItemBow)(new ItemBow(241, EnumBowType.GOLDBOW)).b("goldbow");
    
    
    

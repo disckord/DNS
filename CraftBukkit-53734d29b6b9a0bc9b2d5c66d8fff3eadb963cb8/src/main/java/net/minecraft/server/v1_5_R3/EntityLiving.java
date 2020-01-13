@@ -1145,8 +1145,9 @@ public abstract class EntityLiving extends Entity {
         int j = MathHelper.floor(this.boundingBox.b);
         int k = MathHelper.floor(this.locZ);
         int l = this.world.getTypeId(i, j, k);
+        int bruh = this.world.getTypeId(i, j+1, k);
 
-        return l == Block.LADDER.id || l == Block.VINE.id;
+        return l == Block.LADDER.id || l == Block.VINE.id ||  bruh == Block.LADDER.id || bruh == Block.VINE.id;
     }
     
 

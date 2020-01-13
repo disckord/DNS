@@ -34,6 +34,14 @@ public class CraftingManager {
         this.recipes.add(new RecipeMapExtend());
         this.recipes.add(new RecipeFireworks());
       //added recipes
+        this.registerShapedRecipe(new ItemStack(Item.ironArrow, 4), new Object[] {" X ", "X#X", " X ", 'X', Item.ARROW, '#', Item.IRON_INGOT});
+        this.registerShapedRecipe(new ItemStack(Item.goldArrow, 4), new Object[] {" X ", "X#X", " X ", 'X', Item.ARROW, '#', Item.GOLD_INGOT});
+        this.registerShapedRecipe(new ItemStack(Item.diamondArrow, 4), new Object[] {" X ", "X#X", " X ", 'X', Item.ARROW, '#', Item.DIAMOND});
+        this.registerShapedRecipe(new ItemStack(Item.ironBow, 1), new Object[] {"##", "#X", "##", 'X', Item.BOW, '#', Item.IRON_INGOT});
+        this.registerShapedRecipe(new ItemStack(Item.diamondBow, 1), new Object[] {"##", "#X", "##", 'X', Item.BOW, '#', Item.DIAMOND});
+        this.registerShapedRecipe(new ItemStack(Item.goldBow, 1), new Object[] {"##", "#X", "##", 'X', Item.BOW, '#', Item.GOLD_INGOT});
+        
+      
         this.registerShapedRecipe(new ItemStack(Item.QUARTZ, 4), new Object[] {"#", '#', Block.QUARTZ_BLOCK});
         this.registerShapedRecipe(new ItemStack(Block.coalBlock, 1), new Object[] {"###", "###", "###", '#', Item.COAL});
         this.registerShapedRecipe(new ItemStack(Block.coalBlock, 1), new Object[] {"###", "###", "###", '#', new ItemStack(Item.COAL, 1,1)});

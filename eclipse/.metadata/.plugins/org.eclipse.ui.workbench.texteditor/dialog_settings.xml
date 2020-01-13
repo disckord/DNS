@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="snowball" key="selection"/>
+		<item value="Score" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="snowball"/>
-			<item value="sign"/>
-			<item value="cookie"/>
-			<item value="getbukkitent"/>
-			<item value="getbukkit"/>
-			<item value="addentity"/>
-			<item value="wart"/>
-			<item value="wrat"/>
+			<item value="score"/>
+			<item value="data"/>
+			<item value="datawatcher"/>
+			<item value="public boolean"/>
+			<item value="fireProof"/>
+			<item value="itemID"/>
+			<item value="setUnlocalizedName"/>
+			<item value="explosion"/>
 		</list>
 		<list key="replacehistory">
 			<item value="id"/>
+			<item value="b"/>
 			<item value="Block.GOLD_BLOCK"/>
 			<item value="Block.DIAMOND_BLOCK"/>
 			<item value="Block.IRON_BLOCK"/>
 			<item value="Block.STONE"/>
 			<item value="Item.DIAMOND"/>
 			<item value="GOLD_INGOT"/>
-			<item value="IRON_INGOT"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

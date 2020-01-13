@@ -8,7 +8,8 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 // CraftBukkit end
 
 public class EntityArrow extends Entity implements IProjectile {
-
+	public EnumBowType ebt = EnumBowType.DEFAULT;
+	public EnumArrowType eat;
     private int d = -1;
     private int e = -1;
     private int f = -1;
@@ -28,7 +29,10 @@ public class EntityArrow extends Entity implements IProjectile {
     	super(world);
     	 this.l = 10.0D;
          this.shooter = par2EntityLiving;
-
+         if(this.eat == null)
+         {
+        	 this.eat = EnumArrowType.DEFAULT;
+         }
          if (par2EntityLiving instanceof EntityPlayer)
          {
              this.fromPlayer = 1;
@@ -46,14 +50,48 @@ public class EntityArrow extends Entity implements IProjectile {
          this.motY = (double)(-MathHelper.sin(this.pitch / 180.0F * (float)Math.PI));
          this.shoot(this.motX, this.motY, this.motZ, 1.5F, 1.0F);
     }
+    public EntityArrow(World world, EntityLiving par2EntityLiving, EnumArrowType eat, EnumBowType ebt)
+    {
+    	super(world);
+    	this.eat = eat;
+    	this.ebt = ebt;
+    	 this.l = 10.0D;
+         this.shooter = par2EntityLiving;
+
+     	this.damage = eat.damage + ebt.addedDmg;
+         if (par2EntityLiving instanceof EntityPlayer)
+         {
+             this.fromPlayer = 1;
+         }
+
+         this.a(0.5F, 0.5F);
+         this.setPositionRotation(par2EntityLiving.locX, par2EntityLiving.locY + (double)par2EntityLiving.getHeadHeight(), par2EntityLiving.locZ, par2EntityLiving.yaw, par2EntityLiving.pitch);
+         this.locX -= (double)(MathHelper.cos(this.yaw / 180.0F * (float)Math.PI) * 0.16F);
+         this.locY -= 0.10000000149011612D;
+         this.locZ -= (double)(MathHelper.sin(this.yaw / 180.0F * (float)Math.PI) * 0.16F);
+         this.setPosition(this.locX, this.locY, this.locZ);
+         this.height = 0.0F;
+         this.motX = (double)(-MathHelper.sin(this.yaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.pitch / 180.0F * (float)Math.PI));
+         this.motZ = (double)(MathHelper.cos(this.yaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.pitch / 180.0F * (float)Math.PI));
+         this.motY = (double)(-MathHelper.sin(this.pitch / 180.0F * (float)Math.PI));
+         this.shoot(this.motX, this.motY, this.motZ, 1.5F, ebt.accuracy);
+    }
     public EntityArrow(World world) {
         super(world);
+        if(this.eat == null)
+        {
+       	 this.eat = EnumArrowType.DEFAULT;
+        }
         this.l = 10.0D;
         this.a(0.5F, 0.5F);
     }
 
     public EntityArrow(World world, double d0, double d1, double d2) {
         super(world);
+        if(this.eat == null)
+        {
+       	 this.eat = EnumArrowType.DEFAULT;
+        }
         this.l = 10.0D;
         this.a(0.5F, 0.5F);
         this.setPosition(d0, d1, d2);
@@ -62,6 +100,10 @@ public class EntityArrow extends Entity implements IProjectile {
 
     public EntityArrow(World world, EntityLiving entityliving, EntityLiving entityliving1, float f, float f1) {
         super(world);
+        if(this.eat == null)
+        {
+       	 this.eat = EnumArrowType.DEFAULT;
+        }
         this.l = 10.0D;
         this.shooter = entityliving;
         if (entityliving instanceof EntityHuman) {
@@ -90,6 +132,10 @@ public class EntityArrow extends Entity implements IProjectile {
 
     public EntityArrow(World world, EntityLiving entityliving, float f) {
         super(world);
+        if(this.eat == null)
+        {
+       	 this.eat = EnumArrowType.DEFAULT;
+        }
         this.l = 10.0D;
         this.shooter = entityliving;
         if (entityliving instanceof EntityHuman) {
@@ -111,8 +157,14 @@ public class EntityArrow extends Entity implements IProjectile {
 
     protected void a() {
         this.datawatcher.a(16, Byte.valueOf((byte) 0));
-    }
 
+        this.datawatcher.a(13, Byte.valueOf((byte) 0));
+    }
+    public void setArrowType(EnumArrowType eat)
+    {
+   	 this.eat = eat;
+   	 this.getDataWatcher().watch(13, Byte.valueOf((byte)(eat.ordinal())));
+    }
     public void shoot(double d0, double d1, double d2, float f, float f1) {
         float f2 = MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
 
@@ -125,9 +177,11 @@ public class EntityArrow extends Entity implements IProjectile {
         d0 *= (double) f;
         d1 *= (double) f;
         d2 *= (double) f;
-        this.motX = d0;
-        this.motY = d1;
-        this.motZ = d2;
+
+        float addedvel = (eat.addedVel + ebt.velocity);
+        this.motX = d0 * (double)addedvel;
+        this.motY = d1* (double)addedvel;
+        this.motZ = d2* (double)addedvel;
         float f3 = MathHelper.sqrt(d0 * d0 + d2 * d2);
 
         this.lastYaw = this.yaw = (float) (Math.atan2(d0, d2) * 180.0D / 3.1415927410125732D);
@@ -234,7 +288,7 @@ public class EntityArrow extends Entity implements IProjectile {
 
                 if (movingobjectposition.entity != null) {
                     f2 = MathHelper.sqrt(this.motX * this.motX + this.motY * this.motY + this.motZ * this.motZ);
-                    int i1 = MathHelper.f((double) f2 * this.damage);
+                    int i1 = MathHelper.f(this.damage);
 
                     if (this.d()) {
                         i1 += this.random.nextInt(i1 / 2 + 2);
@@ -403,8 +457,20 @@ public class EntityArrow extends Entity implements IProjectile {
 
     public void b_(EntityHuman entityhuman) {
         if (!this.world.isStatic && this.inGround && this.shake <= 0) {
+        	   boolean flag = this.fromPlayer == 1 || this.fromPlayer == 2 && entityhuman.abilities.canInstantlyBuild;
+        	   Item i= Item.ARROW;
+               if(this.eat == EnumArrowType.GOLDARROW)
+               {
+               	i = Item.goldArrow;
+               }else if(this.eat == EnumArrowType.DIAMONDARROW)
+               {
+               	i = Item.diamondArrow;
+               }else if(this.eat == EnumArrowType.IRONARROW)
+               {
+               	i = Item.ironArrow;
+               }
             // CraftBukkit start
-            ItemStack itemstack = new ItemStack(Item.ARROW);
+            ItemStack itemstack = new ItemStack(i);
             if (this.fromPlayer == 1 && entityhuman.inventory.canHold(itemstack) > 0) {
                 EntityItem item = new EntityItem(this.world, this.locX, this.locY, this.locZ, itemstack);
 
@@ -418,9 +484,8 @@ public class EntityArrow extends Entity implements IProjectile {
             }
             // CraftBukkit end
 
-            boolean flag = this.fromPlayer == 1 || this.fromPlayer == 2 && entityhuman.abilities.canInstantlyBuild;
-
-            if (this.fromPlayer == 1 && !entityhuman.inventory.pickup(new ItemStack(Item.ARROW, 1))) {
+         
+            if (this.fromPlayer == 1 && !entityhuman.inventory.pickup(new ItemStack(i, 1))) {
                 flag = false;
             }
 

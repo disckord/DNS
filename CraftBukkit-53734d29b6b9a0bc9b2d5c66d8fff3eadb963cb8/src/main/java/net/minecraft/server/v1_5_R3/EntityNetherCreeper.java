@@ -186,9 +186,9 @@ public class EntityNetherCreeper extends EntityMonster {
     public void a(EntityLightning entitylightning) {
         super.a(entitylightning);
         // CraftBukkit start
-        if (CraftEventFactory.callCreeperPowerEvent(this, entitylightning, org.bukkit.event.entity.CreeperPowerEvent.PowerCause.LIGHTNING).isCancelled()) {
+        /*if (CraftEventFactory.callCreeperPowerEvent(this, entitylightning, org.bukkit.event.entity.CreeperPowerEvent.PowerCause.LIGHTNING).isCancelled()) {
             return;
-        }
+        }*/
 
         this.setPowered(true);
     }

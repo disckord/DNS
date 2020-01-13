@@ -10,11 +10,13 @@ import net.minecraft.server.v1_5_R3.Container;
 import net.minecraft.server.v1_5_R3.DamageSource;
 import net.minecraft.server.v1_5_R3.Entity;
 import net.minecraft.server.v1_5_R3.EntityArrow;
+import net.minecraft.server.v1_5_R3.EntityCreeper;
 import net.minecraft.server.v1_5_R3.EntityDamageSource;
 import net.minecraft.server.v1_5_R3.EntityDamageSourceIndirect;
 import net.minecraft.server.v1_5_R3.EntityHuman;
 import net.minecraft.server.v1_5_R3.EntityItem;
 import net.minecraft.server.v1_5_R3.EntityLiving;
+import net.minecraft.server.v1_5_R3.EntityNetherCreeper;
 import net.minecraft.server.v1_5_R3.EntityPlayer;
 import net.minecraft.server.v1_5_R3.EntityPotion;
 import net.minecraft.server.v1_5_R3.Explosion;
@@ -509,6 +511,7 @@ public class CraftEventFactory {
     }
 
     public static CreeperPowerEvent callCreeperPowerEvent(Entity creeper, Entity lightning, CreeperPowerEvent.PowerCause cause) {
+    	
         CreeperPowerEvent event = new CreeperPowerEvent((Creeper) creeper.getBukkitEntity(), (LightningStrike) lightning.getBukkitEntity(), cause);
         creeper.getBukkitEntity().getServer().getPluginManager().callEvent(event);
         return event;
