@@ -163,7 +163,6 @@ public class EntityArrow extends Entity implements IProjectile {
     public void setArrowType(EnumArrowType eat)
     {
    	 this.eat = eat;
-   	 this.damage = this.eat.damage + ebt.addedDmg;
    	 this.getDataWatcher().watch(13, Byte.valueOf((byte)(eat.ordinal())));
     }
     public void shoot(double d0, double d1, double d2, float f, float f1) {

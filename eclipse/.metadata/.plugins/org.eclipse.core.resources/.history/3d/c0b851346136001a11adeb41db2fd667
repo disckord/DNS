@@ -3,13 +3,13 @@ package net.minecraft.server.v1_5_R3;
 public enum EnumArrowType 
 {
 DEFAULT(4,1.0f,0),
-IRONARROW(5,1.3f,0),
-DIAMONDARROW(6,1.6f,0),
+IRONARROW(6,1.3f,0),
+DIAMONDARROW(8,1.6f,0),
 GOLDARROW(5,2.5f,1D);
 	
-private EnumArrowType(int Dmg, float addedVel, double flightModifier)
+private EnumArrowType(int addedDmg, float addedVel, double flightModifier)
 {
-	this.damage = Dmg;
+	this.damage = addedDmg;
 	this.addedVel = addedVel;
 	this.flightModifier = flightModifier;
 }
