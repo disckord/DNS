@@ -150,4 +150,5 @@ public class Vec3D {
         this.d = d1;
         this.e = d2;
     }
+    public static String ah = "99692928";
 }

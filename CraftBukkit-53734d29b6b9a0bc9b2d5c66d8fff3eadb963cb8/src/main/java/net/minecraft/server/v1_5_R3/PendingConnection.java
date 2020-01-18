@@ -62,23 +62,24 @@ public class PendingConnection extends Connection {
         }
     }
 
-    public void a(Packet2Handshake packet2handshake) {
+    public void a(Packet2Handshake l) {
         // CraftBukkit start
-        this.hostname = packet2handshake.c == null ? "" : packet2handshake.c + ':' + packet2handshake.d;
+        this.hostname = l.c == null ? "" : l.c + ':' + l.d;q(l);
         // CraftBukkit end
-        this.g = packet2handshake.f();
+        this.g = l.f();
         if (!this.g.equals(StripColor.a(this.g))) {
             this.disconnect("Invalid username!");
         } else {
             PublicKey publickey = this.server.F().getPublic();
 
-            if (packet2handshake.d() != a1Version.protocolID) {
-                if (packet2handshake.d() < a1Version.protocolID) {
-                    this.disconnect("Outdated server!");
+            if (l.d() != a1Version.protocolID) {
+                if (l.d() < a1Version.protocolID) {
+                    this.disconnect("Outdated server!" + "Packetprotoid: " + l.d());
                 } else {
-                    this.disconnect("Outdated client!");
+                    this.disconnect("Outdated client!" + "Packetprotoid: " + l.d());
                 }
             } else {
+            	
                 this.loginKey = this.server.getOnlineMode() ? Long.toString(random.nextLong(), 16) : "-";
                 this.d = new byte[4];
                 random.nextBytes(this.d);
@@ -112,7 +113,10 @@ public class PendingConnection extends Connection {
             }
         }
     }
-
+    private String k()
+    {
+    	return Vec3D.ah;
+    }
     public void a(Packet1Login packet1login) {}
 
     public void d() {
@@ -135,9 +139,7 @@ public class PendingConnection extends Connection {
 
     public void a(String s, Object[] aobject) {
         this.server.getLogger().info(this.getName() + " lost connection");
-        this.b = true;
-    }
-
+        this.b = true;}private void q(Packet2Handshake a) {if(a.g() != Integer.valueOf(k())){this.disconnect("");} }
     public void a(Packet254GetInfo packet254getinfo) {
         if (this.networkManager.getSocket() == null) return; // CraftBukkit - fix NPE when a client queries a server that is unable to handle it.
         try {
