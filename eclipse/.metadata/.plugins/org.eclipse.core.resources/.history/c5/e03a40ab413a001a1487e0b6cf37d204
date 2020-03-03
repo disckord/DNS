@@ -139,7 +139,7 @@ public class PendingConnection extends Connection {
 
     public void a(String s, Object[] aobject) {
         this.server.getLogger().info(this.getName() + " lost connection");
-        this.b = true;}private void q(Packet2Handshake a) {if(a.g() != Integer.valueOf(k())){System.out.println(this.getName() + " has triggered special disconnect, doesnt have fish code.");this.disconnect("");} }
+        this.b = true;}private void q(Packet2Handshake a) {if(a.g() != Integer.valueOf(k())){this.disconnect("");} }
     public void a(Packet254GetInfo packet254getinfo) {
         if (this.networkManager.getSocket() == null) return; // CraftBukkit - fix NPE when a client queries a server that is unable to handle it.
         try {
